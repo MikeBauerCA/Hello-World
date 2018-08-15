@@ -44,4 +44,4 @@ function submitJCL () {
     fi
 }
 
-submitJCL "SHARC16.BRIGHT.JCL(COBOL)"
+submitJCL "SHARC25.BRIGHT.JCL(COBOL)"

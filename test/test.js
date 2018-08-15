@@ -37,12 +37,12 @@ async function awaitJobCompletion(jobId, tries = 10, wait = 2000) {
   }
 }
 
-describe('Hello SHARE', function () {
+describe('Hello World', function () {
   // Change timeout to 15s from the default of 2s
   this.timeout(60000);
 
   describe('Output', function () {
-    it('should return Hello SHARE upon job completion', function (done) {
+    it('should return Hello World upon job completion', function (done) {
       // Submit job, await completion
       cmd.get(
         'bright jobs submit data-set "SHARC16.BRIGHT.DEMO.JCL(CBLTEST)" --rff jobid --rft string',
@@ -58,7 +58,7 @@ describe('Hello SHARE', function () {
             cmd.get(
               'bright jobs view sfbi ' + data + ' 103',
               function (err, data, stderr) {
-                assert.equal(data.trim(), "Hello, SHARE!");
+                assert.equal(data.trim(), "Hello, World!");
                 done();
               }
             );

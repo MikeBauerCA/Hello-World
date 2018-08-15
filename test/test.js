@@ -42,7 +42,7 @@ describe('Hello World', function () {
   this.timeout(60000);
 
   describe('Output', function () {
-    it('should return Hello World upon job completion', function (done) {
+    it('should return SHARC19 upon job completion', function (done) {
       // Submit job, await completion
       cmd.get(
         'bright jobs submit data-set "SHARC19.BRIGHT.JCL(CBLTEST)" --rff jobid --rft string',

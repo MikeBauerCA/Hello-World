@@ -5,17 +5,17 @@ set +x
 echo 'jenkins' | gnome-keyring-daemon --unlock
 
 # set -x
-# bright files download ds "SHARC16.BRIGHT.CBL.LOADLIB(HELLO)" -f bin -b
-echo 'bright files list ds "SHARC16.BRIGHT.TEST.LOADLIB" | grep -q "SHARC16.BRIGHT.TEST.LOADLIB"'
-if bright files list ds "SHARC16.BRIGHT.TEST.LOADLIB" | grep -q "SHARC16.BRIGHT.TEST.LOADLIB"; then
-    echo "SHARC16.BRIGHT.TEST.LOADLIB already exists"
+# bright files download ds "SHARC16.BRIGHT.DEMO.CBL.LOADLIB(HELLO)" -f bin -b
+echo 'bright files list ds "SHARC16.BRIGHT.DEMO.TEST.LOADLIB" | grep -q "SHARC16.BRIGHT.DEMO.TEST.LOADLIB"'
+if bright files list ds "SHARC16.BRIGHT.DEMO.TEST.LOADLIB" | grep -q "SHARC16.BRIGHT.DEMO.TEST.LOADLIB"; then
+    echo "SHARC16.BRIGHT.DEMO.TEST.LOADLIB already exists"
 else
-    echo "SHARC16.BRIGHT.TEST.LOADLIB does not exist. Create it."
-    echo 'bright files create bin "SHARC16.BRIGHT.TEST.LOADLIB"'
-    bright files create bin "SHARC16.BRIGHT.TEST.LOADLIB"
+    echo "SHARC16.BRIGHT.DEMO.TEST.LOADLIB does not exist. Create it."
+    echo 'bright files create bin "SHARC16.BRIGHT.DEMO.TEST.LOADLIB"'
+    bright files create bin "SHARC16.BRIGHT.DEMO.TEST.LOADLIB"
 fi
 
-# bright files upload ftds bin "SHARC16.BRIGHT.TEST.LOADLIB(HELLO)" -b
+# bright files upload ftds bin "SHARC16.BRIGHT.DEMO.TEST.LOADLIB(HELLO)" -b
 tries=20
 wait=2
 function submitJCL () {
@@ -56,4 +56,4 @@ function submitJCL () {
     fi
 }
 
-submitJCL "SHARC16.BRIGHT.JCL(IEBCOPY)"
+submitJCL "SHARC16.BRIGHT.DEMO.JCL(IEBCOPY)"

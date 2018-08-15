@@ -10,7 +10,7 @@ pipeline {
                 sh 'npm --version'
                 sh 'bright --version'
                 sh 'npm install'
-                withCredentials([usernamePassword(credentialsId: 'brightProfCreds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'), string(credentialsId: 'host', variable: 'HOST'), string(credentialsId: 'port', variable: 'PORT')]) {
+                withCredentials([usernamePassword(credentialsId: 'brightProfCreds26', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'), string(credentialsId: 'host', variable: 'HOST'), string(credentialsId: 'port', variable: 'PORT')]) {
                     sh "chmod +x $CREATE_PROFILE && dbus-launch $CREATE_PROFILE"
                 }
                 sh "chmod +x $BUILD_COBOL && dbus-launch $BUILD_COBOL"

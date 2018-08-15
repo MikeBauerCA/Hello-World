@@ -45,7 +45,7 @@ describe('Hello World', function () {
     it('should return Hello World upon job completion', function (done) {
       // Submit job, await completion
       cmd.get(
-        'bright jobs submit data-set "SHARC16.BRIGHT.JCL(CBLTEST)" --rff jobid --rft string',
+        'bright jobs submit data-set "SHARC26.BRIGHT.JCL(CBLTEST)" --rff jobid --rft string',
         function (err, data, stderr) {
           // Strip unwanted whitespace/newline
           data = data.trim();

@@ -58,7 +58,7 @@ describe('Hello World', function () {
             cmd.get(
               'bright jobs view sfbi ' + data + ' 103',
               function (err, data, stderr) {
-                assert.equal(data.trim(), "Hello, World!");
+                assert.equal(data.trim(), "Hello, SHARC18!");
                 done();
               }
             );
